@@ -13,7 +13,7 @@ class CustomerController
 
     public function __construct()
     {
-        $connection = new DBConnection("mysql:host=localhost;dbname=manage_customer", "root", "Lenhuphuong@1");
+        $connection = new DBConnection("mysql:host=localhost;dbname=manage_customer_mvc", "root", "12345678");
         $this->customerDB = new CustomerDB($connection->connect());
     }
 
@@ -22,14 +22,12 @@ class CustomerController
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             include 'view/add.php';
         } else {
-
             $name = $_POST['name'];
             $email = $_POST['email'];
             $address = $_POST['address'];
-
             $customer = new Customer($name, $email, $address);
             $this->customerDB->create($customer);
-            $message = 'Customer created';
+            $message = 'thêm mới thành công';
             include 'view/add.php';
         }
     }
