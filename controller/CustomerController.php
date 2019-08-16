@@ -1,4 +1,5 @@
 <?php
+
 namespace Controller;
 
 use function Couchbase\defaultDecoder;
@@ -29,12 +30,17 @@ class CustomerController
             $this->customerDB->create($customer);
             $message = 'thêm mới thành công';
             include 'view/add.php';
+
+
         }
     }
-    public function index(){
+
+    public function index()
+    {
         $customers = $this->customerDB->getAll();
         include 'view/list.php';
     }
+
     public function delete()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -47,6 +53,7 @@ class CustomerController
             header('Location: index.php');
         }
     }
+
     public function edit()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {

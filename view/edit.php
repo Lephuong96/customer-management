@@ -18,7 +18,7 @@
         <textarea name="address" class="form-control"><?php echo $customer->address; ?></textarea>
     </div>
     <div class="form-group">
-        <input type="submit" value="Update" class="btn btn-info"/>
-        <a href="index.php" class="btn btn-warning">Cancel</a>
+        <input type="submit" value="Sửa" class="btn btn-info"/>
+        <a href="index.php" class="btn btn-warning">Hủy</a>
     </div>
 </form>
